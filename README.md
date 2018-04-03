@@ -18,7 +18,7 @@ The "addbranch" action adds a branch to the  continuous integration trigger for 
 
 `dotnet TFSBuildSideKicks.dll --teamprojectcollection http://mytfs.domain:8080/tfs/tpc --teamproject myteamproject --action addbranch --branch releases/master --build release-ci`
 
-### AddBranch
+### RemoveBranch
 The "removebranch" action removes  a branch form the  continuous integration trigger for the given build. For Example:
 
 `dotnet TFSBuildSideKicks.dll --teamprojectcollection http://mytfs.domain:8080/tfs/tpc --teamproject myteamproject --action removebranch  --branch releases/master --build release-ci`
