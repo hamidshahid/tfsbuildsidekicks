@@ -6,3 +6,19 @@ I found it quite peeeving that I could not edit multiple builds at the same time
 Default agent queue, adding/removing a demand, etc.), so decided to create this project.
 
 The project is built in Microsoft .Net core and would run in any platform supported by .net core. 
+
+
+Usage Information:
+
+`dotnet TFSBuildSideKicks.dll --teamprojectcollection <team_project_collection_url> --teamproject <team_project_name> --action [ addbranch | removebranch] [--branch <branchName> --build <build_defintion_name>]`
+
+
+### AddBranch
+The "addbranch" action adds a branch to the  continuous integration trigger for the given build. For Example:
+
+`dotnet TFSBuildSideKicks.dll --teamprojectcollection http://mytfs.domain:8080/tfs/tpc --teamproject myteamproject --action addbranch --branch releases/master --build release-ci`
+
+### AddBranch
+The "removebranch" action removes  a branch form the  continuous integration trigger for the given build. For Example:
+
+`dotnet TFSBuildSideKicks.dll --teamprojectcollection http://mytfs.domain:8080/tfs/tpc --teamproject myteamproject --action removebranch  --branch releases/master --build release-ci`
