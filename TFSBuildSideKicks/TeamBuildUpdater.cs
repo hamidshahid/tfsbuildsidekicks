@@ -75,7 +75,7 @@ namespace TFSBuildSideKicks
         {
             using (var client = new HttpClient(new HttpClientHandler() { UseDefaultCredentials = true }))
             {
-                string requestUrl = $"{new Uri(this.teamProjectCollectionUrl)}/{this.teamProjectName}/_apis/build/definitions?api-version=2.0&name={buildDefinitionName}&path={path}";
+                string requestUrl = $"{new Uri(this.teamProjectCollectionUrl)}/{this.teamProjectName}/_apis/build/definitions?api-version=2.2&name={buildDefinitionName}&path={path}";
                 var response = client.GetAsync(requestUrl).Result;
                 if (!response.IsSuccessStatusCode)
                 {
@@ -102,7 +102,7 @@ namespace TFSBuildSideKicks
         {
             using (var client = new HttpClient(new HttpClientHandler() { UseDefaultCredentials = true }))
             {
-                string requestUrl = $"{new Uri(this.teamProjectCollectionUrl)}/{this.teamProjectName}/_apis/build/definitions/{buildDefinitionId}?api-version=2.0";
+                string requestUrl = $"{new Uri(this.teamProjectCollectionUrl)}/{this.teamProjectName}/_apis/build/definitions/{buildDefinitionId}?api-version=2.2";
                 var response = await client.GetAsync(requestUrl);
                 if (!response.IsSuccessStatusCode)
                 {
